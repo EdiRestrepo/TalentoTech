@@ -24,4 +24,8 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    public void presentarse() {
+        System.out.println("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.");
+    }
 }
