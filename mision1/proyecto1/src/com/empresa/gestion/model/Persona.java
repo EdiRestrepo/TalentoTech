@@ -5,11 +5,15 @@ public class Persona {
     //🔐 Encapsulación 
     private String nombre;
     private int edad;
+    protected boolean activo;
+    private char genero;
 
     //📦 Constructor
-    public Persona(String nombre, int edad) {
+    public Persona(String nombre, int edad, boolean activo, char genero) {
         this.nombre = nombre;
         this.edad = edad;
+        this.activo = activo;
+        this.genero = genero;
     }
     //🔧 Getters y Setters
     public String getNombre() {
@@ -25,7 +29,21 @@ public class Persona {
         this.edad = edad;
     }
 
+    public char getGenero() {
+        return genero;
+    }
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
+
     public void presentarse() {
         System.out.println("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.");
+    }
+
+    public void mostrarInfoBasica() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("Activo: " + (activo ? "Sí" : "No"));
+        System.out.println("Género: " + genero);
     }
 }
