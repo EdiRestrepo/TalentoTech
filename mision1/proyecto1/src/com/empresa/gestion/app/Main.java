@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Sistema de Gestión de Empleados");
 
-        Empleado emp1 = new Empleado("Juan Pérez", 30, true, 'M', 50000.0);
-        Gerente ger1 = new Gerente("Ana Gómez", 40, false, 'F', 80000.0, "Ventas");
+        Empleado emp1 = new Empleado("Juan Pérez", 30, true, 'M', 50000.0, 160);
+        Gerente ger1 = new Gerente("Ana Gómez", 40, false, 'F', 80000.0, "Ventas",50);
         emp1.presentarse();
         ger1.presentarse();
 
