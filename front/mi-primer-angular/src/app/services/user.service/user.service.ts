@@ -10,8 +10,8 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getUsers() {
-    // return this.http.get<any[]>('users.json');
-    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/users');
+    return this.http.get<any[]>('users.json');
+    // return this.http.get<any[]>('https://jsonplaceholder.typicode.com/users');
   }
 
 }
