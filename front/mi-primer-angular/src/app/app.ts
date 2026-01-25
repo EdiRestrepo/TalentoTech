@@ -12,12 +12,12 @@ import { JsonPipe } from '@angular/common'; // Add this import
 export class App {
   protected title = 'mi-primer-angular';
 
-  users: any[] = [];
+  // users: any[] = [];
 
-  constructor(private userService: UserService) {
-    this.userService.getUsers().subscribe(data => {
-      this.users = data;
-      console.log(this.users);
-    });
-  }
+  // constructor(private userService: UserService) {
+  //   this.userService.getUsers().subscribe(data => {
+  //     this.users = data;
+  //     console.log(this.users);
+  //   });
+  // }
 }

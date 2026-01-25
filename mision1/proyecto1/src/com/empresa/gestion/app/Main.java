@@ -21,6 +21,8 @@ public class Main {
         System.out.println("==== EMPLEADOS ====");
         System.out.println("Salario anual de " + emp1.getNombre() + ": " + salarioEmp1);
         System.out.println("¿Puede trabajar?"+ (emp1.puedeTrabajar() ? " Sí" : " No"));
+        System.out.println("¿Puede trabajar?" + emp1.clasificarEmpleado());
+        System.out.println("Genero " + emp1.obtenerTipoEmpleado());
         emp1.mostrarInfoBasica();
         System.out.println("");
         System.out.println("\n==== GERENTES ====");
@@ -28,6 +30,8 @@ public class Main {
         System.out.println("Salario anual de " + ger1.getNombre() + ": " + salarioGer1);
         System.out.println("Bono del gerente: " + ger1.getBono());
         System.out.println("Salario mensual del gerente (incluyendo bono): " + ger1.calcularSalarioMensual());
+        System.out.println("¿Puede trabajar?" + ger1.clasificarEmpleado());
+          System.out.println("Genero " + ger1.obtenerTipoEmpleado());
         ger1.mostrarInfoBasica();
         
     }
