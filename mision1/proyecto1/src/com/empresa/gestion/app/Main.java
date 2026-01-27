@@ -33,6 +33,12 @@ public class Main {
         System.out.println("¿Puede trabajar?" + ger1.clasificarEmpleado());
           System.out.println("Genero " + ger1.obtenerTipoEmpleado());
         ger1.mostrarInfoBasica();
+
+        double[] salarios={2000,1000,5000};
+        System.out.println("Calcular Total Nomina "+nominaService.calcularTotalNomina(salarios));
+
+        int meses=3;
+        nominaService.simularPagos(meses);
         
     }
     
