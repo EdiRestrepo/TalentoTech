@@ -7,13 +7,16 @@ public class Persona {
     protected  int edad;
     protected boolean activo;
     protected char genero;
+    protected int id;
+    
 
     //📦 Constructor
-    public Persona(String nombre, int edad, boolean activo, char genero) {
+    public Persona(String nombre, int edad, boolean activo, char genero, int id) {
         this.nombre = nombre;
         this.edad = edad;
         this.activo = activo;
         this.genero = genero;
+        this.id = id;
     }
     //🔧 Getters y Setters
     public String getNombre() {
@@ -45,5 +48,9 @@ public class Persona {
         System.out.println("Edad: " + edad);
         System.out.println("Activo: " + (activo ? "Sí" : "No"));
         System.out.println("Género: " + genero);
+    }
+
+    public int getId() {
+        return id;
     }
 }

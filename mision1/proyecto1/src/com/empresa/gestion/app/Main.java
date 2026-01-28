@@ -1,5 +1,7 @@
 package mision1.proyecto1.src.com.empresa.gestion.app;
 
+import java.util.List;
+
 import mision1.proyecto1.src.com.empresa.gestion.model.Empleado;
 import mision1.proyecto1.src.com.empresa.gestion.model.Gerente;
 import mision1.proyecto1.src.com.empresa.gestion.service.NominaService;
@@ -9,8 +11,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Sistema de Gestión de Empleados");
 
-        Empleado emp1 = new Empleado("Juan Pérez", 30, true, 'M', 50000.0, 160);
-        Gerente ger1 = new Gerente("Ana Gómez", 40, false, 'F', 80000.0, "Ventas",50, 10000.0);
+        Empleado emp1 = new Empleado("Juan Pérez", 30, true, 'M', 50000.0, 160, 1);
+        Gerente ger1 = new Gerente("Ana Gómez", 40, false, 'F', 80000.0, "Ventas",50, 10000.0, 2);
         // emp1.presentarse();
         // ger1.presentarse();
 
@@ -39,6 +41,10 @@ public class Main {
 
         int meses=3;
         nominaService.simularPagos(meses);
+
+        // ❌ esto no compila
+        //List<String> lista = new List<>();
+
         
     }
     
