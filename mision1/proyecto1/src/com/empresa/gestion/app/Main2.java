@@ -11,8 +11,8 @@ public class Main2 {
     public static void main(String[] args) {
         System.out.println("Sistema de Gestión de Empleados");
 
-        Empleado emp1 = new Empleado("Juan Pérez", 30, true, 'M', 50000.0, 160, 1);
-        Gerente ger1 = new Gerente("Ana Gómez", 40, false, 'F', 80000.0, "Ventas",50, 10000.0, 2);
+        Empleado emp1 = new Empleado(1,"Juan Pérez", 30, true, 'M', 50000., 160);
+        Gerente ger1 = new Gerente(2,"María Gómez", 45, true, 'F', 80000., 160, 20000., "Ventas");
         // emp1.presentarse();
         // ger1.presentarse();
 
