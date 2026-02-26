@@ -33,9 +33,32 @@ public class EmpleadoService {
                 return;
             }
         }
+        System.out.println("Empleado con ID "+id+" no encontrado.");    
+    }
+
+    public void consultarEmpleado(int id){
+        for(Empleado emp : empleados){
+            if(emp.getId()==id){
+                System.out.println("ID: " + emp.getId() + ", Nombre: " + emp.getNombre() + "Edad: " + emp.getEdad());
+                return;
+            }
+        }
         System.out.println("Empleado con ID "+id+" no encontrado.");
     }
 
+    // Listar
+    public void listarEmpleados(){
+        if(empleados.isEmpty()){
+            System.out.println("⚠️ No hay empleados registrados");
+            return;
+        }
+        for (Empleado e : empleados){
+            System.out.println(e.resumen());
+
+        }
+    }
+
+    
     // public void eliminarEmpleado(int id) {
     //     Empleado empleadoAEliminar = null;
     //     for(Empleado emp : empleados) {

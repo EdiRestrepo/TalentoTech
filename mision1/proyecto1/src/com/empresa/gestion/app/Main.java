@@ -1,51 +1,73 @@
 package mision1.proyecto1.src.com.empresa.gestion.app;
 
-import java.util.List;
+import java.util.Scanner;
 
 import mision1.proyecto1.src.com.empresa.gestion.model.Empleado;
-import mision1.proyecto1.src.com.empresa.gestion.model.Gerente;
-import mision1.proyecto1.src.com.empresa.gestion.service.NominaService;
+import mision1.proyecto1.src.com.empresa.gestion.service.EmpleadoService;
 
 public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        EmpleadoService service = new EmpleadoService();
+        int opcion;
+        do{
+            System.out.println("\n === MENÚ DE EMPLEADOS ==="); //Syot
+            System.out.println("1. Agregar empleado"); //Syot
+            System.out.println("2. Listar empleado"); //Syot
+            System.out.println("3. Consultar empleado"); //Syot
+            System.out.println("4. Eliminar empleado"); //Syot
+            System.out.println("0. Salir"); //Syot
+            System.out.println("Seleccione una opción"); //Syot
+            opcion = sc.nextInt();
+//int id,String nombre, int edad,boolean activo,char genero, double salario, int horasTrabajadas
+            switch (opcion) {
+                case 1:
+                    System.out.println("Id: ");
+                    int id = sc.nextInt();
+                    
+                    System.out.println("Nombre: ");
+                    sc.nextLine();//limpiar 
+                    String nombre = sc.nextLine();
+                    
+                    System.out.println("Edad: ");
+                    int edad = sc.nextInt();
+                    
+                    System.out.println("Activo: ");
+                    boolean activo = sc.nextBoolean();
+                    
+                    System.out.println("Genero: ");
+                    char genero = sc.next().charAt(0);
+                    
+                    System.out.println("Salario: ");
+                    double salario = sc.nextDouble();
 
-    public static void main(String[] args) {
-        System.out.println("Sistema de Gestión de Empleados");
+                    System.out.println("Horas Trabajadas: ");
+                    int horasTrabajadas = sc.nextInt();
 
-        Empleado emp1 = new Empleado("Juan Pérez", 30, true, 'M', 50000.0, 160, 1);
-        Gerente ger1 = new Gerente("Ana Gómez", 40, false, 'F', 80000.0, "Ventas",50, 10000.0, 2);
-        // emp1.presentarse();
-        // ger1.presentarse();
-
-        NominaService nominaService = new NominaService();
-        double salarioEmp1 = nominaService.calcularSalarioAnual(emp1);
-        double salarioGer1 = nominaService.calcularSalarioAnual(ger1);
-
-        System.out.println("==== EMPLEADOS ====");
-        System.out.println("Salario anual de " + emp1.getNombre() + ": " + salarioEmp1);
-        System.out.println("¿Puede trabajar?"+ (emp1.puedeTrabajar() ? " Sí" : " No"));
-        System.out.println("¿Puede trabajar?" + emp1.clasificarEmpleado());
-        System.out.println("Genero " + emp1.obtenerTipoEmpleado());
-        emp1.mostrarInfoBasica();
-        System.out.println("");
-        System.out.println("\n==== GERENTES ====");
-        System.out.println("¿Puede trabajar?"+ (ger1.puedeTrabajar() ? " Sí" : " No"));
-        System.out.println("Salario anual de " + ger1.getNombre() + ": " + salarioGer1);
-        System.out.println("Bono del gerente: " + ger1.getBono());
-        System.out.println("Salario mensual del gerente (incluyendo bono): " + ger1.calcularSalarioMensual());
-        System.out.println("¿Puede trabajar?" + ger1.clasificarEmpleado());
-          System.out.println("Genero " + ger1.obtenerTipoEmpleado());
-        ger1.mostrarInfoBasica();
-
-        double[] salarios={2000,1000,5000};
-        System.out.println("Calcular Total Nomina "+nominaService.calcularTotalNomina(salarios));
-
-        int meses=3;
-        nominaService.simularPagos(meses);
-
-        // ❌ esto no compila
-        //List<String> lista = new List<>();
-
+                    Empleado emp = new Empleado(id, nombre, edad, activo, genero, salario, horasTrabajadas);
+                    service.agregarEmpleado(emp); 
+                    break;
+                    case 2:
+                        service.listarEmpleados();
+                        break;
+                    case 3:
+                        System.out.println("Ingrese Id: ");
+                        service.consultarEmpleado(sc.nextInt());
+                        break;
+                    case 4:
+                        System.out.println("Ingrese Id a eliminar: ");
+                        service.eliminarEmpleado(sc.nextInt());
+                        break;
+                    case 0:
+                        System.out.println(" Saliendo del sistema....");
+                        break;
+                default:
+                    System.out.println("✖️ opción inválida ");
+            }
+    
+        }while(opcion!=0);
+        sc.close();
         
-    }
+      }
     
 }

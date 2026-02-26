@@ -3,7 +3,7 @@ package mision1.proyecto1.src.com.empresa.gestion.model;
 public class Persona {
 
     //🔐 Encapsulación 
-    private String nombre;
+    protected String nombre;
     protected  int edad;
     protected boolean activo;
     protected char genero;
@@ -11,12 +11,12 @@ public class Persona {
     
 
     //📦 Constructor
-    public Persona(String nombre, int edad, boolean activo, char genero, int id) {
+    public Persona(int id,String nombre, int edad,boolean activo,char genero) {
+      this.id=id;
         this.nombre = nombre;
         this.edad = edad;
-        this.activo = activo;
-        this.genero = genero;
-        this.id = id;
+        this.activo= activo;
+        this.genero=genero;
     }
     //🔧 Getters y Setters
     public String getNombre() {
